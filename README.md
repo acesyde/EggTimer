@@ -1,16 +1,9 @@
-# egg_timer
+# Egg Timer Flutter
 
-A new Flutter project.
+UI challenge to create an egg timer.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+[Youtube](https://www.youtube.com/watch?v=svxUUz5mi9s)
+[Dribble](https://dribbble.com/shots/2764686-Original-timer-app-UX-interaction)
+[Egg Icon](https://www.flaticon.com/free-icon/boiled-egg_112280)
