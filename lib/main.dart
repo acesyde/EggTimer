@@ -3,6 +3,8 @@ import 'package:egg_timer/components/egg_timer.dart';
 import 'package:egg_timer/components/egg_timer_controls.dart';
 import 'package:egg_timer/components/egg_timer_dial.dart';
 import 'package:egg_timer/components/egg_timer_time_display.dart';
+import 'package:flutter_i18n/flutter_i18n_delegate.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyEggTimerApp());
@@ -40,6 +42,19 @@ class _MyEggTimerAppState extends State<MyEggTimerApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        localizationsDelegates: [
+          FlutterI18nDelegate(
+            useCountryCode: false,
+            fallbackFile: "en.json",
+            path: "assets/locales"
+          ),
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+        ],
+        supportedLocales: [
+          const Locale('fr'),
+          const Locale('en'),
+        ],
         title: 'Egg Timer',
         theme: ThemeData(fontFamily: "BebasNeue"),
         home: Scaffold(
@@ -48,7 +63,10 @@ class _MyEggTimerAppState extends State<MyEggTimerApp> {
                 gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    colors: [ColorsConstants.GRADIENT_TOP, ColorsConstants.GRADIENT_BOTTOM])),
+                    colors: [
+                  ColorsConstants.GRADIENT_TOP,
+                  ColorsConstants.GRADIENT_BOTTOM
+                ])),
             child: Center(
               child: Column(
                 children: <Widget>[

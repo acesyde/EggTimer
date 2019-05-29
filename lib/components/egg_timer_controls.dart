@@ -1,6 +1,7 @@
 import 'package:egg_timer/components/egg_timer.dart';
 import 'package:egg_timer/components/egg_timer_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_i18n/flutter_i18n.dart';
 
 class EggTimerControls extends StatefulWidget {
   final EggTimerState eggTimerState;
@@ -75,7 +76,7 @@ class _EggTimerControlsState extends State<EggTimerControls>
               EggTimerButton(
                 backgroundColor: Colors.transparent,
                 iconData: Icons.refresh,
-                text: 'RESTART',
+                text: FlutterI18n.translate(context, 'button_restart'),
                 onPressed: widget.onRestart,
               ),
               Expanded(
@@ -84,7 +85,7 @@ class _EggTimerControlsState extends State<EggTimerControls>
               EggTimerButton(
                 backgroundColor: Colors.transparent,
                 iconData: Icons.arrow_back,
-                text: 'RESET',
+                text: FlutterI18n.translate(context, 'button_reset'),
                 onPressed: widget.onReset,
               )
             ],
@@ -99,8 +100,8 @@ class _EggTimerControlsState extends State<EggTimerControls>
                 ? Icons.pause
                 : Icons.play_arrow,
             text: widget.eggTimerState == EggTimerState.running
-                ? 'PAUSE'
-                : 'RESUME',
+                ? FlutterI18n.translate(context, 'button_pause')
+                : FlutterI18n.translate(context, 'button_resume'),
             onPressed: widget.eggTimerState == EggTimerState.running
                 ? widget.onPause
                 : widget.onResume,
