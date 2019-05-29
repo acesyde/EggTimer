@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter_ringtone_player/flutter_ringtone_player.dart';
 
 class EggTimer {
   final Duration maxTime;
@@ -72,14 +73,17 @@ class EggTimer {
     );
   }
 
-  _tick() {
-    print('Current time : ${_currentTime.inSeconds}');
+  _tick() async {
     _currentTime = lastStartTime - stopwatch.elapsed;
 
     if (_currentTime.inSeconds > 0) {
       Timer(const Duration(seconds: 1), _tick);
     } else {
       state = EggTimerState.ready;
+      await FlutterRingtonePlayer.playAlarm(
+        volume: 1.0,
+        looping: false
+      );
     }
 
     if (null != onTimerUpdate) {

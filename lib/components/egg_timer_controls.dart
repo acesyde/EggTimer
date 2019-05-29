@@ -52,7 +52,7 @@ class _EggTimerControlsState extends State<EggTimerControls>
 
   @override
   Widget build(BuildContext context) {
-    switch (widget.eggTimerState) {
+    switch (widget.eggTimerState) {      
       case EggTimerState.ready:
         pauseResumeSlideController.forward();
         restartResetFadeController.forward();
